@@ -20,3 +20,21 @@ chatBox = {
 
     }
 }
+
+// psuedoclassical
+function Person(name, gender){
+    this.name = name;
+    this.gender = gender;
+}
+Person.prototype.sayHello = function(){
+   console.log(this.name + ' says hello')
+}
+function malePerson(name){
+    Person.call(this, name, 'male')
+}
+
+malePerson.prototype = Object.create(Person.prototype);
+malePerson.prototype.constructor = malePerson;
+
+var david = new malePerson('david')
+
