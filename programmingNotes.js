@@ -21,7 +21,7 @@ chatBox = {
     }
 }
 
-// psuedoclassical
+// psuedoclassical instantion and subclassing
 function Person(name, gender){
     this.name = name;
     this.gender = gender;
@@ -38,3 +38,12 @@ malePerson.prototype.constructor = malePerson;
 
 var david = new malePerson('david')
 
+// vanilla node server implementation 
+the server routes to the proper request handler and the request handler handles
+POST/GET/OPTIONS... requests 
+we can use a library to parse the string url to route to the proper handler
+the request handle recieves a request agrument and from there can handle the requests
+for POST we need to retrieve the information by accumulator the chunks of data that is sent 
+with event listener request.on('data', (chunks) => data += chunks ) and request.on('end', (cb) => {cb(JSON.parse(data))}) 
+the data is wrapped in an function so we can retrieve our data. 
+*response.end() has to be called and only once for each request
