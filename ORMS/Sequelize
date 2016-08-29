@@ -1,0 +1,8 @@
+Sequelize
+var Sequelize = require('sequelize')
+
+
+var User = Sequelize.define('users'{
+  username = Sequelize.STRING,
+  password = Sequelize.STRING
+})
